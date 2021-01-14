@@ -25,10 +25,10 @@ CREATE TABLE DOMICILIO (
     
 CREATE TABLE DOMICILIO_CLIENTE ( 
     id_Domicilio_Cliente serial NOT NULL,
-    id_cliente serial NOT NULL,
+    id_Cliente serial NOT NULL,
     id_Domicilio serial NOT NULL,
     PRIMARY KEY (id_Domicilio_Cliente),
-    FOREIGN KEY(id_Client) REFERENCES CLIENTE(id_Cliente),
+    FOREIGN KEY(id_Cliente) REFERENCES CLIENTE(id_Cliente),
     FOREIGN KEY(id_Domicilio) REFERENCES DOMICILIO(id_Domicilio)
     );
     
@@ -68,7 +68,6 @@ CREATE TABLE TELEFONO_PROVEEDOR (
 CREATE TABLE VENTA ( 
     id_Venta serial NOT NULL DEFAULT  'VENT-'||nextval('num_Venta'),
     cant_Art_Total smallint NOT NULL,
-    precio_Art money NOT NULL,
     precio_Total money NOT NULL,
     fecha_Venta date NOT NULL,
     PRIMARY KEY (id_Venta)
@@ -104,20 +103,21 @@ CREATE TABLE INVENTARIO_PRODUCTO (
     );
 
 CREATE TABLE DOMICILIO_INVENTARIO ( 
-    id_Inventario serial NOT NULL,
     id_Domicilio_Inventario serial NOT NULL,
+    id_Inventario serial NOT NULL,
     id_Domicilio serial NOT NULL,
-    PRIMARY KEY (id_Inventario),
-    FOREIGN KEY (id_Domicilio_Inventario) REFERENCES INVENTARIO(id_Domicilio_Inventario),
+    PRIMARY KEY (id_Domicilio_Inventario),
+    FOREIGN KEY (id_Inventario) REFERENCES INVENTARIO(id_Inventario),
     FOREIGN KEY (id_Domicilio) REFERENCES DOMICILIO(id_Domicilio)
     );
     
     
  CREATE TABLE INVENTARIO (
-    id_Inventario serial NOT NULL,
-    id_Domicilio_Inventario serial NOT NULL,
+    id_Inventario serial NOT NULL
+    nombre varchar(40) NOT NULL,
+    --id_Domicilio_Inventario serial NOT NULL,
     PRIMARY KEY(id_Inventario),
-    FOREIGN KEY(id_Domicilio_Inventario) REFERENCES DOMICILIO_INVENTARIO(id_Domicilio_Inventario)
+    --FOREIGN KEY(id_Domicilio_Inventario) REFERENCES DOMICILIO_INVENTARIO(id_Domicilio_Inventario)
     );
     
     
