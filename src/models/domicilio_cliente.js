@@ -1,4 +1,4 @@
-class Domicilio_Cliente {
+export class Domicilio_Cliente {
   constructor(id_Domicilio_Cliente, id_Cliente, id_Domicilio) {
     this.id_Domicilio_Cliente = id_Domicilio_Cliente;
     this.id_Cliente = id_Cliente;

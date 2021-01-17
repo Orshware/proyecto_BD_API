@@ -1,4 +1,4 @@
-class Domicilio {
+export class Domicilio {
   constructor(id_Domicilio, estado, colonia, calle, numero, cp) {
     this.id_Domicilio = id_Domicilio;
     this.estado = estado;

@@ -1,4 +1,4 @@
-class Telefono_Proveedor {
+export class Telefono_Proveedor {
   constructor(id_Telefono_Proveedor, id_Telefono, id_Proveedor) {
     this.id_Telefono_Proveedor = id_Telefono_Proveedor;
     this.id_Telefono = id_Telefono;

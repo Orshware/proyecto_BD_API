@@ -1,4 +1,4 @@
-class Proveedor {
+export class Proveedor {
   constructor(id_Proveedor, nombre, ap_Pat, ap_Mat, razon_Social) {
     this.id_Proveedor = id_Proveedor;
     this.nombre = nombre;
