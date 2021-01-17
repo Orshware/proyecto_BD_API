@@ -25,4 +25,22 @@ router.post('/', async (req, res) => {
     res.json(response);
 });
 
+router.patch('/', async (req, res) => {
+
+    const cliente = new Cliente(
+        null, 
+        req.body.nombre, 
+        req.body.ap_pat, 
+        req.body.ap_mat, 
+        req.body.razon_social, 
+        req.body.email
+    );
+
+    const response = await data_base.query('SELECT id_Cliente FROM CLIENTE WHERE nombre = $1 AND ap_Pat = $2 AND ap_Mat = $3 AND email = $4;', [cliente.nombre, cliente.ap_Pat, cliente.ap_Mat, cliente.email]);
+
+    //response.body = domicilio.toJson();
+
+    res.json(response.rows);
+});
+
 export default router;
