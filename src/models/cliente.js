@@ -1,4 +1,4 @@
-class Cliente {
+export class Cliente {
   constructor(id_Cliente, nombre, ap_Pat, ap_Mat, razon_Social, email) {
     this.id_Cliente = id_Cliente;
     this.nombre = nombre;
