@@ -1,4 +1,4 @@
-class Provee {
+export class Provee {
   constructor(id_Provee, id_Proveedor, id_Producto, cant_Compra, precio_Compra, fecha_Compra) {
     this.id_Provee = id_Provee;
     this.id_Proveedor = id_Proveedor;

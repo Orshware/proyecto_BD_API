@@ -1,4 +1,4 @@
-class Inventario_Producto {
+export class Inventario_Producto {
   constructor(id_Inventario_Producto, id_Inventario, id_Producto, descripcion, cantidad, marca) {
     this.id_Inventario_Producto = id_Inventario_Producto;
     this.id_Inventario = id_Inventario;
