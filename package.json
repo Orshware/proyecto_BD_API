@@ -21,7 +21,8 @@
   "homepage": "https://github.com/Orshware/proyecto_BD_API#readme",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
