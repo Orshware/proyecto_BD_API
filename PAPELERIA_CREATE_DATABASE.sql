@@ -19,9 +19,9 @@ CREATE TABLE CLIENTE (
 
     
 CREATE TABLE PRODUCTO (
+    codigo_Barras varchar(20) NOT NULL,
     precio_Venta money NOT NULL,
     tipo_Articulo varchar(5) NOT NULL,
-    codigo_Barras varchar(20) NOT NULL,
     nombre varchar(40) NOT NULL,
     PRIMARY KEY (codigo_Barras)
     );
