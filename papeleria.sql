@@ -137,7 +137,7 @@ CREATE TABLE VENTA (
 	SELECT *FROM VENTA;
 	
 INSERT INTO VENTA(cant_Art_Total, precio_Total, fecha_Venta) VALUES(2,32,'2021-01-15');
-INSERT INTO VENTA(cant_Art_Total, precio_Total, fecha_Venta) VALUES(1,100,'2020-12-20');
+INSERT INTO VENTA(cant_Art_Total, precio_Total, fecha_Venta) VALUES(1,100,'2021-01-17');
 INSERT INTO VENTA(cant_Art_Total, precio_Total, fecha_Venta) VALUES(2,62,'2021-01-17');
 INSERT INTO VENTA(cant_Art_Total, precio_Total, fecha_Venta) VALUES(3,330,'2020-11-06');
 						 
@@ -242,7 +242,7 @@ CREATE TABLE PROVEE (
     id_Proveedor serial NOT NULL,
     codigo_Barras varchar(20) NOT NULL,
     cant_Compra smallint,
-    precio_Compra smallint,
+    precio_Compra money NOT NULL,
     fecha_Compra date,
     PRIMARY KEY (id_Provee),
     FOREIGN KEY (id_Proveedor) REFERENCES PROVEEDOR(id_Proveedor),
@@ -254,4 +254,67 @@ INSERT INTO PROVEE(id_Proveedor, codigo_Barras, cant_Compra, precio_Compra, fech
 INSERT INTO PROVEE(id_Proveedor, codigo_Barras, cant_Compra, precio_Compra, fecha_Compra) VALUES(3,'00605PELUCHE5',15,50,'2021-01-20');
 INSERT INTO PROVEE(id_Proveedor, codigo_Barras, cant_Compra, precio_Compra, fecha_Compra) VALUES(3,'00547ALAJEROMUSIC',50,100,'2021-01-25');
 INSERT INTO PROVEE(id_Proveedor, codigo_Barras, cant_Compra, precio_Compra, fecha_Compra) VALUES(3,'0064CARTERA6DAMA3000',12,20,'2020-11-25');
-						  
+
+--
+--1
+--Al recibir el código de barras de un producto, regrese la utilidad.
+
+--SELECT precio_venta - precio_compra as utilidad 
+--FROM producto 
+--JOIN provee 
+--ON producto.codigo_barras = provee.codigo_barras 
+--WHERE producto.codigo_barras = '0011HOJASB100CARTA';
+
+--2 Se debe hacer con un Trigger
+--Cada que haya la venta de un artı́culo, deberá decrementarse el stock por
+--la cantidad vendida de ese artı́culo. Si el valor llega a cero, abortar la
+--transacción. Si hay menos de 3, emitir un mensaje.
+
+
+--3
+--Dada una fecha, o una fecha de inicio y fecha de fin, regresar la cantidad
+--total que se vendió en esa fecha/periodo.
+
+--3 solo un dia
+--WITH ventas_diarias(venta_total_diaria, fecha_venta) 
+--AS 
+--(
+--    SELECT SUM(precio_total),fecha_venta 
+--    FROM venta 
+--    GROUP BY fecha_venta
+--) 
+--SELECT venta_total_diaria 
+--FROM ventas_diarias 
+--WHERE ventas_diarias.fecha_venta = '2021-01-17';
+
+--3 periodo
+--WITH ventas_diarias(venta_total_diaria, fecha_venta) 
+--AS 
+--(
+--    SELECT SUM(precio_total),fecha_venta 
+--    FROM venta 
+--    GROUP BY fecha_venta
+--) 
+--SELECT SUM(venta_total_diaria) venta_total_periodo  
+--FROM ventas_diarias 
+--WHERE ventas_diarias.fecha_venta 
+--BETWEEN '2021-01-14' AND '2021-01-18';
+
+--4 
+--Permitir obtener el nombre de aquellos productos de los cuales hay menos
+--de 3 en stock.
+
+--SELECT producto.nombre 
+--FROM producto 
+--JOIN inventario_producto 
+--ON producto.codigo_barras = inventario_producto.codigo_barras 
+--WHERE inventario_producto.cantidad < 3;
+
+--5
+--De manera automática se genere una vista que contenga información ne-
+--cesaria para asemejarse a una factura de una compra.
+
+
+--6
+--Crear al menos, un ı́ndice, del tipo que se prefiera y donde se prefiera.
+--Justificar el porqué de la elección en ambos aspectos.
