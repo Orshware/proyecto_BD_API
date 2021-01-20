@@ -270,6 +270,17 @@ INSERT INTO PROVEE(id_Proveedor, codigo_Barras, cant_Compra, precio_Compra, fech
 --la cantidad vendida de ese artı́culo. Si el valor llega a cero, abortar la
 --transacción. Si hay menos de 3, emitir un mensaje.
 
+--CREATE OR REPLACE PROCEDURE DECREMENTAR(id_Inventario int,cantidad smallint)
+--AS
+--BEGIN
+--	FOR NEW_QUANT IN(SELECT cantidad FROM INVENTARIO_PRODUCTO WHERE id_Inventario=id_Inventario)
+--	WHILE (NEW_QUANT=>1)
+--		BEGIN
+--		SET NEW_QUANT-1
+--	END WHILE;
+--	select upper('NO HAY ARTICULOS DISPONIBLES');
+--END;
+--
 
 --3
 --Dada una fecha, o una fecha de inicio y fecha de fin, regresar la cantidad
