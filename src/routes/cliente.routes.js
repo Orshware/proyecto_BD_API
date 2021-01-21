@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
         req.body.email
     );
 
-    const response = await data_base.query('INSERT INTO CLIENTE(nombre, ap_Pat, ap_Mat, razon_Social, email) VALUES ($1, $2, $3, $4, $5);', [cliente.nombre, cliente.ap_Pat, cliente.ap_Mat, cliente.razon_Social, cliente.email]);
+    const response = await data_base.query('INSERT INTO CLIENTE(nombre, ap_pat, ap_mat, razon_social, email) VALUES ($1, $2, $3, $4, $5);', [cliente.nombre, cliente.ap_pat, cliente.ap_mat, cliente.razon_social, cliente.email]);
 
     res.json(response);
 });
@@ -36,7 +36,7 @@ router.patch('/', async (req, res) => {
         req.body.email
     );
 
-    const response = await data_base.query('SELECT id_Cliente FROM CLIENTE WHERE nombre = $1 AND ap_Pat = $2 AND ap_Mat = $3 AND email = $4;', [cliente.nombre, cliente.ap_Pat, cliente.ap_Mat, cliente.email]);
+    const response = await data_base.query('SELECT id_Cliente FROM CLIENTE WHERE nombre = $1 AND ap_pat = $2 AND ap_mat = $3 AND email = $4;', [cliente.nombre, cliente.ap_pat, cliente.ap_mat, cliente.email]);
 
     //response.body = domicilio.toJson();
 

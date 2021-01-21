@@ -1,20 +1,20 @@
 export class Cliente {
-  constructor(id_Cliente, nombre, ap_Pat, ap_Mat, razon_Social, email) {
-    this.id_Cliente = id_Cliente;
+  constructor(id_cliente, nombre, ap_pat, ap_mat, razon_social, email) {
+    this.id_cliente = id_cliente;
     this.nombre = nombre;
-    this.ap_Pat = ap_Pat;
-    this.ap_Mat = ap_Mat;
-    this.razon_Social = razon_Social;
+    this.ap_pat = ap_pat;
+    this.ap_mat = ap_mat;
+    this.razon_social = razon_social;
     this.email = email;
   }
 
   toJson() {
     return {
-      'id_Cliente': this.id_Cliente,
+      'id_cliente': this.id_cliente,
       'nombre': this.nombre,
-      'ap_Pat': this.ap_Pat,
-      'ap_Mat': this.ap_Mat,
-      'razon_Social': this.razon_Social,
+      'ap_pat': this.ap_pat,
+      'ap_mat': this.ap_mat,
+      'razon_social': this.razon_social,
       'email': this.email
     };
   }

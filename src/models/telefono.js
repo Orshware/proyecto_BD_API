@@ -1,13 +1,13 @@
 export class Telefono {
-  constructor(id_Telefono, num_Telefono) {
-    this.id_Telefono = id_Telefono;
-    this.num_Telefono = num_Telefono;
+  constructor(id_telefono, num_telefono) {
+    this.id_telefono = id_telefono;
+    this.num_telefono = num_telefono;
   }
 
   toJson() {
     return {
-      'id_Telefono': this.id_Telefono,
-      'num_Telefono': this.num_Telefono
+      'id_telefono': this.id_telefono,
+      'num_telefono': this.num_telefono
     };
   }
 }

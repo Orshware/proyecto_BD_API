@@ -1,21 +1,21 @@
 export class Provee {
-  constructor(id_Provee, id_Proveedor, id_Producto, cant_Compra, precio_Compra, fecha_Compra) {
-    this.id_Provee = id_Provee;
-    this.id_Proveedor = id_Proveedor;
-    this.id_Producto = id_Producto;
-    this.cant_Compra = cant_Compra;
-    this.precio_Compra = precio_Compra;
-    this.fecha_Compra = fecha_Compra;
+  constructor(id_provee, id_proveedor, codigo_barras, cant_compra, precio_compra, fecha_compra) {
+    this.id_provee = id_provee;
+    this.id_proveedor = id_proveedor;
+    this.codigo_barras = codigo_barras;
+    this.cant_compra = cant_compra;
+    this.precio_compra = precio_compra;
+    this.fecha_compra = fecha_compra;
   }
 
   toJson() {
     return {
-      'id_Provee': this.id_Provee,
-      'id_Proveedor': this.id_Proveedor,
-      'id_Producto': this.id_Producto,
-      'cant_Compra': this.cant_Compra,
-      'precio_Compra': this.precio_Compra,
-      'fecha_Compra': this.fecha_Compra
+      'id_provee': this.id_provee,
+      'id_proveedor': this.id_proveedor,
+      'codigo_barras': this.codigo_barras,
+      'cant_compra': this.cant_compra,
+      'precio_compra': this.precio_compra,
+      'fecha_compra': this.fecha_compra
     };
   }
 }

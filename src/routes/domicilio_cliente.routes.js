@@ -13,11 +13,11 @@ router.post('/', async (req, res) => {
 
     const domicilio_cliente = new Domicilio_Cliente(
         null,
-        req.body.id_Cliente, 
-        req.body.id_Domicilio
+        req.body.id_cliente, 
+        req.body.id_domicilio
     );
 
-    const response = await data_base.query('INSERT INTO DOMICILIO_CLIENTE(id_Cliente, id_Domicilio) VALUES ($1, $2);', [domicilio_cliente.id_Cliente, domicilio_cliente.id_Domicilio]);
+    const response = await data_base.query('INSERT INTO DOMICILIO_CLIENTE(id_cliente, id_domicilio) VALUES ($1, $2);', [domicilio_cliente.id_cliente, domicilio_cliente.id_domicilio]);
 
     response.body = domicilio_cliente.toJson();
 
@@ -28,11 +28,11 @@ router.patch('/', async (req, res) => {
 
     const domicilio_cliente = new Domicilio_Cliente(
         null,
-        req.body.id_Cliente, 
-        req.body.id_Domicilio
+        req.body.id_cliente, 
+        req.body.id_domicilio
     );
 
-    const response = await data_base.query('SELECT id_Domicilio_Cliente FROM DOMICILIO_CLIENTE WHERE id_Cliente = $1 AND id_Domicilio = $2;', [domicilio_cliente.id_Cliente, domicilio_cliente.id_Domicilio]);
+    const response = await data_base.query('SELECT id_domicilio_Cliente FROM DOMICILIO_CLIENTE WHERE id_cliente = $1 AND id_domicilio = $2;', [domicilio_cliente.id_cliente, domicilio_cliente.id_domicilio]);
 
     res.json(response.rows);
 });

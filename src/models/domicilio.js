@@ -1,6 +1,6 @@
 export class Domicilio {
-  constructor(id_Domicilio, estado, colonia, calle, numero, cp) {
-    this.id_Domicilio = id_Domicilio;
+  constructor(id_domicilio, estado, colonia, calle, numero, cp) {
+    this.id_domicilio = id_domicilio;
     this.estado = estado;
     this.colonia = colonia;
     this.calle = calle;
@@ -10,7 +10,7 @@ export class Domicilio {
 
   toJson() {
     return {
-      'id_Domicilio': this.id_Domicilio,
+      'id_domicilio': this.id_domicilio,
       'estado': this.estado,
       'colonia': this.colonia,
       'calle': this.calle,

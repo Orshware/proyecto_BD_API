@@ -1,12 +1,12 @@
 export class Inventario {
-  constructor(id_Inventario, nombre) {
-    this.id_Inventario = id_Inventario;
+  constructor(id_inventario, nombre) {
+    this.id_inventario = id_inventario;
     this.nombre = nombre;
   }
 
   toJson() {
     return {
-      'id_Inventario': this.id_Inventario,
+      'id_inventario': this.id_inventario,
       'nombre': this.nombre,
     };
   }

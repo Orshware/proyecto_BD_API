@@ -1,15 +1,15 @@
 export class Domicilio_Cliente {
-  constructor(id_Domicilio_Cliente, id_Cliente, id_Domicilio) {
-    this.id_Domicilio_Cliente = id_Domicilio_Cliente;
-    this.id_Cliente = id_Cliente;
-    this.id_Domicilio = id_Domicilio;
+  constructor(id_domicilio_cliente, id_cliente, id_domicilio) {
+    this.id_domicilio_cliente = id_domicilio_cliente;
+    this.id_cliente = id_cliente;
+    this.id_domicilio = id_domicilio;
   }
 
   toJson() {
     return {
-      'id_Domicilio_Cliente': this.id_Domicilio_Cliente,
-      'id_Cliente': this.id_Cliente,
-      'id_Domicilio': this.id_Domicilio
+      'id_domicilio_cliente': this.id_domicilio_cliente,
+      'id_cliente': this.id_cliente,
+      'id_domicilio': this.id_domicilio
     };
   }
 }

@@ -1,8 +1,8 @@
 export class Inventario_Producto {
-  constructor(id_Inventario_Producto, id_Inventario, id_Producto, descripcion, cantidad, marca) {
-    this.id_Inventario_Producto = id_Inventario_Producto;
-    this.id_Inventario = id_Inventario;
-    this.id_Producto = id_Producto;
+  constructor(id_inventario_producto, id_inventario, codigo_barras, descripcion, cantidad, marca) {
+    this.id_inventario_producto = id_inventario_producto;
+    this.id_inventario = id_inventario;
+    this.codigo_barras = codigo_barras;
     this.descripcion = descripcion;
     this.cantidad = cantidad;
     this.marca = marca;
@@ -10,9 +10,9 @@ export class Inventario_Producto {
 
   toJson() {
     return {
-      'id_Inventario_Producto': this.id_Inventario_Producto,
-      'id_Inventario': this.id_Inventario,
-      'id_Producto': this.id_Producto,
+      'id_inventario_producto': this.id_inventario_producto,
+      'id_inventario': this.id_inventario,
+      'codigo_barras': this.codigo_barras,
       'descripcion': this.descripcion,
       'cantidad': this.cantidad,
       'marca': this.marca
