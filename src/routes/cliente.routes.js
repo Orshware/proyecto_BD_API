@@ -81,4 +81,20 @@ router.patch('/', async (req, res) => {
     res.json(response.rows);
 });
 
+router.patch('/getID', async (req, res) => {
+
+    const cliente = new Cliente(
+        null, 
+        req.body.nombre, 
+        req.body.ap_pat, 
+        req.body.ap_mat,
+        null,
+        null
+    );
+
+    const response = await data_base.query('SELECT id_Cliente FROM CLIENTE WHERE nombre = $1 AND ap_pat = $2 AND ap_mat = $3;', [cliente.nombre, cliente.ap_pat, cliente.ap_mat]);
+
+    res.json(response.rows);
+});
+
 export default router;
