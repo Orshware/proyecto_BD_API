@@ -1,19 +1,19 @@
 export class Proveedor {
-  constructor(id_Proveedor, nombre, ap_Pat, ap_Mat, razon_Social) {
-    this.id_Proveedor = id_Proveedor;
+  constructor(id_proveedor, nombre, ap_pat, ap_mat, razon_social) {
+    this.id_proveedor = id_proveedor;
     this.nombre = nombre;
-    this.ap_Pat = ap_Pat;
-    this.ap_Mat = ap_Mat;
-    this.razon_Social = razon_Social;
+    this.ap_pat = ap_pat;
+    this.ap_mat = ap_mat;
+    this.razon_social = razon_social;
   }
 
   toJson() {
     return {
-      'id_Proveedor': this.id_Proveedor,
+      'id_proveedor': this.id_proveedor,
       'nombre': this.nombre,
-      'ap_Pat': this.ap_Pat,
-      'ap_Mat': this.ap_Mat,
-      'razon_Social': this.razon_Social
+      'ap_pat': this.ap_pat,
+      'ap_mat': this.ap_mat,
+      'razon_social': this.razon_social
     };
   }
 }

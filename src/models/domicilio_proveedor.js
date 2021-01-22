@@ -1,15 +1,15 @@
 export class Domicilio_Proveedor {
-  constructor(id_Domicilio_Proveedor, id_Proveedor, id_Domicilio) {
-    this.id_Domicilio_Proveedor = id_Domicilio_Proveedor;
-    this.id_Proveedor = id_Proveedor;
-    this.id_Domicilio = id_Domicilio;
+  constructor(id_domicilio_proveedor, id_proveedor, id_domicilio) {
+    this.id_domicilio_proveedor = id_domicilio_proveedor;
+    this.id_proveedor = id_proveedor;
+    this.id_domicilio = id_domicilio;
   }
 
   toJson() {
     return {
-      'id_Domicilio_Proveedor': this.id_Domicilio_Proveedor,
-      'id_Proveedor': this.id_Proveedor,
-      'id_Domicilio': this.id_Domicilio
+      'id_domicilio_proveedor': this.id_domicilio_proveedor,
+      'id_proveedor': this.id_proveedor,
+      'id_domicilio': this.id_domicilio
     };
   }
 }

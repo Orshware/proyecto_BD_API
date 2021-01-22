@@ -1,17 +1,17 @@
 export class Compra {
-  constructor(id_Compra, id_Venta, id_Cliente, id_Producto) {
-    this.id_Compra = id_Compra;
-    this.id_Venta = id_Venta;
-    this.id_Cliente = id_Cliente;
-    this.codigo_Barras = codigo_Barras;
+  constructor(id_compra, id_venta, cant_art, codigo_barras) {
+    this.id_compra = id_compra;
+    this.id_venta = id_venta;
+    this.cant_art = cant_art;
+    this.codigo_barras = codigo_barras;
   }
 
   toJson() {
     return {
-      'id_Compra': this.id_Compra,
-      'id_Venta': this.id_Venta,
-      'id_Cliente': this.id_Cliente,
-      'codigo_Barras': this.codigo_Barras
+      'id_compra': this.id_compra,
+      'id_venta': this.id_venta,
+      'cant_art': this.cant_art,
+      'codigo_barras': this.codigo_barras
     };
   }
 }

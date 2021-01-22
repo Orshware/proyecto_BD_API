@@ -14,26 +14,44 @@ router.post('/', async (req, res) => {
 
     const venta = new Venta(
         null, 
-        req.body.cant_Art_Total, 
-        req.body.precio_Total, 
-        req.body.fecha_Venta
+        req.body.id_cliente, 
+        req.body.cant_art_total, 
+        req.body.precio_total, 
+        req.body.fecha_venta
     );
 
-    const response = await data_base.query('INSERT INTO VENTA(cant_Art_Total, precio_Total, fecha_Venta) VALUES ($1, $2, $3);', [venta.cant_Art_Total, venta.precio_Total, venta.fecha_Venta]);
+    const response = await data_base.query('INSERT INTO VENTA(id_cliente, cant_art_total, precio_total, fecha_venta) VALUES ($1, $2, $3, $4);', [venta.id_cliente, venta.cant_art_total, venta.precio_total, venta.fecha_venta]);
 
     res.json(response);
+});
+
+router.post('/new', async (req, res) => {
+
+    const venta = new Venta(
+        null, 
+        req.body.id_cliente, 
+        0, 
+        0, 
+        '2021-01-21'
+    );
+
+    const response = await data_base.query('INSERT INTO VENTA(id_cliente, cant_art_total, precio_total, fecha_venta) VALUES ($1, $2, $3, $4);', [venta.id_cliente, venta.cant_art_total, venta.precio_total, venta.fecha_venta]);
+
+    const response_id_venta = await data_base.query('SELECT id_venta FROM venta ORDER BY id_venta DESC LIMIT 1'); 
+
+    res.json(response_id_venta.rows);
 });
 
 router.patch('/', async (req, res) => {
 
     const venta = new Venta(
         null, 
-        req.body.cant_Art_Total, 
-        req.body.precio_Total, 
-        req.body.fecha_Venta
+        req.body.cant_art_total, 
+        req.body.precio_total, 
+        req.body.fecha_venta
     );
 
-    const response = await data_base.query('SELECT id_Venta FROM VENTA WHERE cant_Art_Total = $1 AND precio_Total = $2 AND fecha_Venta = $3;', [venta.cant_Art_Total, venta.precio_Total, venta.fecha_Venta]);
+    const response = await data_base.query('SELECT id_Venta FROM VENTA WHERE cant_art_total = $1 AND precio_total = $2 AND fecha_venta = $3;', [venta.cant_art_total, venta.precio_total, venta.fecha_venta]);
 
     //response.body = domicilio.toJson();
 

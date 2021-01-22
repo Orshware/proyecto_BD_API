@@ -1,15 +1,15 @@
 export class Telefono_Proveedor {
-  constructor(id_Telefono_Proveedor, id_Telefono, id_Proveedor) {
-    this.id_Telefono_Proveedor = id_Telefono_Proveedor;
-    this.id_Telefono = id_Telefono;
-    this.id_Proveedor = id_Proveedor;
+  constructor(id_telefono_proveedor, id_telefono, id_proveedor) {
+    this.id_telefono_proveedor = id_telefono_proveedor;
+    this.id_telefono = id_telefono;
+    this.id_proveedor = id_proveedor;
   }
 
   toJson() {
     return {
-      'id_Telefono_Proveedor': this.id_Telefono_Proveedor,
-      'id_Telefono': this.id_Telefono,
-      'id_Proveedor': this.id_Proveedor
+      'id_telefono_proveedor': this.id_telefono_proveedor,
+      'id_telefono': this.id_telefono,
+      'id_proveedor': this.id_proveedor
     };
   }
 }
