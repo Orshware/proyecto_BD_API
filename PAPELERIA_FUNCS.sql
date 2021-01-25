@@ -133,3 +133,5 @@ LANGUAGE SQL;
 --6
 --Crear al menos, un ı́ndice, del tipo que se prefiera y donde se prefiera.
 --Justificar el porqué de la elección en ambos aspectos.
+--Se creo este indice para poder acceder de una forma muy eficiente a los registros de los productos.
+CREATE UNIQUE INDEX producto_index ON producto(codigo_barras ASC);
